@@ -1,0 +1,8 @@
+job('MyWebhookJob') {
+    scm {
+        git('https://github.com/Gitesh-Jawale/emart.git')
+    }
+    steps {
+        bat 'mvn clean package'
+    }
+}
