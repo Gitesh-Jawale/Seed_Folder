@@ -1,4 +1,4 @@
-job('MyWebhookJob') {
+job('myfreestyleproject using jobdsl') {
     scm {
         git('https://github.com/Gitesh-Jawale/emart.git')
     }
