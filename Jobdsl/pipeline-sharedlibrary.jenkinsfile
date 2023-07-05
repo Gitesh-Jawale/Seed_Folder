@@ -1,0 +1,25 @@
+job('pipeline-with-shared-library-jobDSL') {
+  scm {
+    git {
+      branch('main')
+      remote {
+        url('https://github.com/Gitesh-Jawale/jenkins.git')
+      }
+    }
+  }
+  steps {
+    script {
+      stage('build') {
+        library('my-shared-library') 
+        sh 'Gitesh Rahul'
+        echo 'building application'
+      }
+      stage('test') {
+        echo 'testing application'
+      }
+      stage('deploy') {
+        echo 'deploying application'
+      }
+    }
+  }
+}
