@@ -1,6 +1,6 @@
 job('myfreestyleprojectusingjobdslassignment1') {
     scm {
-        git('https://github.com/Gitesh-Jawale/jenkins.git')
+        git branch: 'main', url: 'https://github.com/Gitesh-Jawale/jenkins.git'
     }
     steps {
         shell '''
