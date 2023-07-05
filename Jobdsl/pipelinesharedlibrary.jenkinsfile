@@ -11,7 +11,7 @@ job('pipeline-with-shared-library-jobDSL') {
     script {
       stage('build') {
         library('my-shared-library') 
-        sh 'Gitesh Rahul'
+        shLib ('Gitesh Rahul')
         echo 'building application'
       }
       stage('test') {
