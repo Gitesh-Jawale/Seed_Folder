@@ -7,6 +7,35 @@ job('pipeline-with-shared-library-jobDSL') {
       }
     }
   }
+  definition {
+       cps {
+           script('''
+               @Library('my-shared-library') _
+               pipeline {
+                   agent any
+                   stages {
+                       stage('Build') {
+                           steps {
+                               shLib ('Gitesh Rahul')
+                               echo 'Building...'
+                           }
+                       }
+                       stage('Test') {
+                           steps {
+                               echo 'Testing...'
+                           }
+                       }
+                       stage('Deploy') {
+                           steps {
+                               echo 'Deploying...'
+                           }
+                       }
+                   }
+               }
+           ''')
+       }
+   }
+
   steps {
     script {
       stage('build') {
