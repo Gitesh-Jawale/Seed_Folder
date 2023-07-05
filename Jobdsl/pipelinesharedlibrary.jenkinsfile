@@ -35,20 +35,4 @@ job('pipeline-with-shared-library-jobDSL') {
            ''')
        }
    }
-
-  steps {
-    script {
-      stage('build') {
-        library('my-shared-library') 
-        shLib ('Gitesh Rahul')
-        echo 'building application'
-      }
-      stage('test') {
-        echo 'testing application'
-      }
-      stage('deploy') {
-        echo 'deploying application'
-      }
-    }
-  }
 }
